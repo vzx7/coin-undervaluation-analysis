@@ -7,9 +7,12 @@ import tabulate
 import os
 from dotenv import load_dotenv, dotenv_values 
 
-load_dotenv() 
+load_dotenv()
 
-MY_TOKEN = os.getenv("MY_TOKEN")
+APP_TITLE = 'Undervalued coins'
+
+# token data-api.cryptocompare.com
+API_TOKEN = os.getenv("API_TOKEN")
 
 # BTC emission
 BTC_EMISSION = 21000000
@@ -63,12 +66,14 @@ Currency = {
 Get coin price
  """
 def getPrice(curr):
-    url = f"https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol={curr}&api_key={MY_TOKEN}"
+    url = f"https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol={curr}&api_key={API_TOKEN}"
 
     with urllib.request.urlopen(url) as url:
         data = json.load(url)
         return data['Data']['PRICE_USD']
 
+
+print('\n### ' + APP_TITLE.title() + ' ###\n')
 
 BTC_price = getPrice(BTC_ID)
 """
@@ -77,12 +82,12 @@ Dictionary Underestimate
 Underestimate = {}
 
 for curr, emission in tqdm.tqdm(Currency.items()): 
-    time.sleep(2)
+    time.sleep(1)
     currency_price = getPrice(curr)
     #currency_price = random.randint(1, 100)
     
     underestimate = (BTC_price/(emission/BTC_EMISSION))/currency_price
-    print(curr, currency_price, underestimate)
+    #print(curr, currency_price, underestimate)
     Underestimate[round(underestimate)] = curr
     
 sorted_underestimate = dict(sorted(Underestimate.items(), reverse=True))
@@ -91,4 +96,4 @@ underestimate_final = [];
 for v, k in sorted_underestimate.items():
     underestimate_final.append([k,v])
 
-print(tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Underestimate"], showindex="always", tablefmt="double_grid"))
+print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Underestimate"], showindex="always", tablefmt="double_grid"))
