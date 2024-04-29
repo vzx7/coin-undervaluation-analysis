@@ -2,11 +2,18 @@
 import urllib.request, json
 import random
 import time
+import tqdm
+import tabulate
 
-
+# BTC emission
 BTC_EMISSION = 21000000
-BTC_S = 'BTC'
 
+# BTC symbol
+BTC_ID = 'BTC'
+
+""" 
+Cryptocurrency dictionary, { symbol: emission }
+"""
 Currency = {
     'MIOTA': 3229505319,
     'SOL': 574915273,
@@ -57,17 +64,23 @@ def getPrice(curr):
         return data['Data']['PRICE_USD']
 
 
-BTC_price = getPrice(BTC_S)
+BTC_price = getPrice(BTC_ID)
 
 Profit = {}
 
-for curr, emission in Currency.items(): 
+for curr, emission in tqdm.tqdm(Currency.items()): 
     time.sleep(2)
     currency_price = getPrice(curr)
+    #currency_price = random.randint(1, 100)
     
     underestimate = (BTC_price/(emission/BTC_EMISSION))/currency_price
     print(curr, currency_price, underestimate)
     Profit[round(underestimate)] = curr
     
 sorted_profit = dict(sorted(Profit.items(), reverse=True))
-print(sorted_profit)
+
+_underestimate = [];
+for v, k in sorted_profit.items():
+    _underestimate.append([k,v])
+
+print(tabulate.tabulate(_underestimate, headers=["Ind", "Simbol", "Underestimate"], showindex="always", tablefmt="double_grid"))
