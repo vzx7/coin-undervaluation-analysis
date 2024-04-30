@@ -52,7 +52,12 @@ CurrencyList = {
     'NEAR': 1188295576,
     'MATIC': 10000000000,
     'CRV': 3303030299,
-    'XMR': 18429993
+    'XMR': 18429993,
+    'CRO': 30263013692,
+    'TIA': 1039890411,
+    'STX': 1818000000,
+    'SUI': 10000000000,
+    'ETH': 122056395
 }
 
 # git repo data
@@ -60,6 +65,26 @@ GitHubData = {
     'BTC': {
         'owner': 'bitcoin',
         'repo': 'bitcoin'
+    },
+    'ETH': {
+        'owner': 'ethereum',
+        'repo': 'go-ethereum'
+    },
+    'CRO': {
+        'owner': 'crypto-org-chain',
+        'repo': 'cronos'
+    },
+    'SUI': {
+        'owner': 'MystenLabs',
+        'repo': 'sui'
+    },
+    'STX': {
+        'owner': 'stacks-network',
+        'repo': 'stacks-core'
+    },
+    'TIA': {
+        'owner': 'celestiaorg',
+        'repo': 'celestia-core'
     },
     'TON': {
         'owner': 'ton-blockchain',
