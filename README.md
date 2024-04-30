@@ -26,7 +26,7 @@ Thus, we first calculate how much BTC would be worth if its emission were equal 
 ## TODO
 I plan to add an analysis of the repositories of those coins that participate in the analysis. This will help you understand what growth potential the selected project has.
 
-## Отказ от ответственности
-Данный сервис не является финансовым советом или инсайдом для инвестиций. Если вы его используете, ВЫ и ТОЛЬКО ВЫ САМИ несете за это отвественность. 
+## Denial of responsibility
+This service does not constitute financial advice or investment insight. If you use it, YOU and YOU ONLY are responsible for it.
 
-Код данного сервиса выложен в ознокомительных целях.
+The code for this service is posted for informational purposes.
