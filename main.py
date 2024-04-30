@@ -75,6 +75,7 @@ def getPrice(curr):
 
 print('\n### ' + APP_TITLE.title() + ' ###\n')
 
+#BTC_price = 63000
 BTC_price = getPrice(BTC_ID)
 """
 Dictionary Underestimate
@@ -88,12 +89,12 @@ for curr, emission in tqdm.tqdm(Currency.items()):
     
     underestimate = (BTC_price/(emission/BTC_EMISSION))/currency_price
     #print(curr, currency_price, underestimate)
-    Underestimate[round(underestimate)] = curr
+    Underestimate[underestimate] = [curr, currency_price]
     
 sorted_underestimate = dict(sorted(Underestimate.items(), reverse=True))
 
 underestimate_final = [];
-for v, k in sorted_underestimate.items():
-    underestimate_final.append([k,v])
+for v, data in sorted_underestimate.items():
+    underestimate_final.append([data[0], '$' + str(data[1]), round(v)])
 
-print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Underestimate"], showindex="always", tablefmt="double_grid"))
+print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Price (USD)", "Underestimate"], showindex="always", tablefmt="double_grid"))
