@@ -15,7 +15,7 @@ $ python ./main.py
 ```
 Coin statistics will be displayed. Based on these statistics, we can conclude that the price of the coin is objective.
 GIT commits - count of commits in the last year.
-![scrensort](scr.png)
+![scrensort](_scr.png)
 
 
 ## Сalculation algorithm
