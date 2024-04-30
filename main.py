@@ -1,10 +1,11 @@
-
-import urllib.request, json
 import random
 import time
 import tqdm
 import tabulate
 import os
+import requests
+import git_helper
+
 from dotenv import load_dotenv, dotenv_values 
 
 load_dotenv()
@@ -41,7 +42,6 @@ Currency = {
     'XLM': 50001806812,
     'ATOM': 390930671,
     'VET': 86712634466,
-    'MKR': 1005577,
     'OP': 4294967296,
     'GRT': 10797266751,
     'FTM': 3175000000,
@@ -56,7 +56,6 @@ Currency = {
     'ONT': 1000000000,
     'CTK': 133687317,
     'NEAR': 1188295576,
-    'QRL': 105000000,
     'MATIC': 10000000000,
     'CRV': 3303030299,
     'XMR': 18429993
@@ -67,10 +66,9 @@ Get coin price
  """
 def getPrice(curr):
     url = f"https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol={curr}&api_key={API_TOKEN}"
-
-    with urllib.request.urlopen(url) as url:
-        data = json.load(url)
-        return data['Data']['PRICE_USD']
+    req = requests.get(url)
+    data = req.json()
+    return data['Data']['PRICE_USD']
 
 
 print('\n### ' + APP_TITLE.title() + ' ###\n')
@@ -89,12 +87,20 @@ for curr, emission in tqdm.tqdm(Currency.items()):
     
     underestimate = (BTC_price/(emission/BTC_EMISSION))/currency_price
     #print(curr, currency_price, underestimate)
-    Underestimate[underestimate] = [curr, currency_price]
+    count_commits = git_helper.getCountCommits(curr)
+    Underestimate[underestimate] = [curr, currency_price, count_commits, emission]
     
 sorted_underestimate = dict(sorted(Underestimate.items(), reverse=True))
 
-underestimate_final = [];
-for v, data in sorted_underestimate.items():
-    underestimate_final.append([data[0], '$' + str(data[1]), round(v)])
+BTC_commits = git_helper.getCountCommits(BTC_ID)
 
-print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Price (USD)", "Underestimate"], showindex="always", tablefmt="double_grid"))
+underestimate_final = [[
+    BTC_ID, BTC_EMISSION, '$' + str(BTC_price), BTC_commits, 0
+]];
+
+for v, data in sorted_underestimate.items():
+    commits = data[2] if data[2] > 0 else 'no data'
+    underestimate_final.append([data[0], data[3], '$' + str(data[1]), commits, round(v)])
+
+print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Price (USD)", "GIT commits", "Underestimate"], showindex="always", tablefmt="double_grid"))
+
