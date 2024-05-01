@@ -22,7 +22,7 @@ CurrencyList = {
     'MIOTA': 3229505319,
     'SOL': 574915273,
     'XRP': 100000000000,
-    'TON': 5105886521,
+    'TONCOIN': 5105886521,
     'ADA': 45000000000,
     'AVAX': 715748719,
     'TRX': 87554275200,
@@ -86,7 +86,7 @@ GitHubData = {
         'owner': 'celestiaorg',
         'repo': 'celestia-core'
     },
-    'TON': {
+    'TONCOIN': {
         'owner': 'ton-blockchain',
         'repo': 'ton'
     },
