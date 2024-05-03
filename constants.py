@@ -57,7 +57,9 @@ CurrencyList = {
     'TIA': 1039890411,
     'STX': 1818000000,
     'SUI': 10000000000,
-    'ETH': 122056395
+    'ETH': 122056395,
+    'JUP': 10000000000,
+    'W': 10000000000
 }
 
 # git repo data
@@ -201,5 +203,9 @@ GitHubData = {
     'XMR': {
         'owner': 'monero-project',
         'repo': 'monero'
+    },
+    'W': {
+        'owner': 'wormhole-foundation',
+        'repo': 'wormhole'
     }
 }
