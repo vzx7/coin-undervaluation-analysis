@@ -3,11 +3,11 @@ import requests
 import constants
  
 # Get coin price
-def getPrice(curr):
-    url = f"https://min-api.cryptocompare.com/data/price?fsym={curr}&tsyms=USD&api_key={constants.API_TOKEN}"
+def getData(curr):
+    url = f"https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol={curr}&api_key={constants.API_TOKEN}"
     req = requests.get(url)
     data = req.json()
-    return data['USD']
+    return data['Data']
 
 # Get commits count form base repo
 def getCountCommits(curr):

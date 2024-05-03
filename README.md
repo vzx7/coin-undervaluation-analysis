@@ -25,6 +25,9 @@ The calculation algorithm is very simple, and this is my personal opinion.
 ```
 Thus, we first calculate how much BTC would be worth if its emission were equal to the emission of the selected coin. Next, we divide this amount by the current price of the coin and get how many times the coin is cheaper than BTC. Personally, it helps me understand how much the coin is relatively cheaper than BTC.
 
+## TODO
+- Add an interface for analyzing one coin. Pass the coin code via a command line argument.
+
 ## Denial of responsibility
 This service does not constitute financial advice or investment insight. If you use it, YOU and YOU ONLY are responsible for it.
 
