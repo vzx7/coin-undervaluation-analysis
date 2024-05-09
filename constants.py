@@ -22,7 +22,7 @@ CurrencyList = {
     'MIOTA': 3229505319,
     'SOL': 574915273,
     'XRP': 100000000000,
-    'TON': 5105886521,
+    'TONCOIN': 5105886521,
     'ADA': 45000000000,
     'AVAX': 715748719,
     'TRX': 87554275200,
@@ -44,7 +44,6 @@ CurrencyList = {
     'HNT': 223000000,
     'OM': 888888888,
     'IOTX': 10000000000,
-    'HOT': 177619433541,
     'ZEC': 21000000,
     'NANO': 133248297,
     'ONT': 1000000000,
@@ -59,7 +58,9 @@ CurrencyList = {
     'SUI': 10000000000,
     'ETH': 122056395,
     'JUP': 10000000000,
-    'W': 10000000000
+    'W': 10000000000,
+    'PYTH': 9999988994,
+    'ONE': 14269278702 
 }
 
 # git repo data
@@ -71,6 +72,14 @@ GitHubData = {
     'ETH': {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
+    },
+    'PITH': {
+        'owner': 'pyth-network',
+        'repo': 'pyth-crosschain'
+    },
+    'ONE': {
+        'owner': 'harmony-one',
+        'repo': 'harmony'
     },
     'CRO': {
         'owner': 'crypto-org-chain',
@@ -88,7 +97,7 @@ GitHubData = {
         'owner': 'celestiaorg',
         'repo': 'celestia-core'
     },
-    'TON': {
+    'TONCOIN': {
         'owner': 'ton-blockchain',
         'repo': 'ton'
     },
@@ -171,10 +180,6 @@ GitHubData = {
     'IOTX': {
         'owner': 'iotexproject',
         'repo': 'iotex-core'
-    },
-    'HOT': {
-        'owner': 'holochain',
-        'repo': 'holochain-rust'
     },
     'ZEC': {
         'owner': 'zcash',

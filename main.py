@@ -40,7 +40,7 @@ underestimate_final = [[
 
 for v, data in sorted_underestimate.items():
     commits = data[2] if data[2] > 0 else 'no data'
-    underestimate_final.append([data[0], format_decimal(data[3], format='#,##0.##;-#', locale='en'), format_currency(data[4], 'USD', locale='en_US'), format_currency(data[1], 'USD', locale='en_US'), commits, round(v)])
+    underestimate_final.append([data[0], format_decimal(data[3], format='#,##0.##;-#', locale='en'), format_currency(data[4], 'USD', locale='en_US'), '$' + str(round(data[1], 4)), commits, round(v)])
 
 print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Mkt. Cap.", "Price (USD)", "GIT commits", "Underestimate"], showindex="always", tablefmt="double_grid"))
 
