@@ -46,7 +46,7 @@ CurrencyList = {
     'IOTX': 10000000000,
     'ZEC': 21000000,
     'NANO': 133248297,
-    'ONT': 1000000000,
+    'ROSE': 10000000000,
     'CTK': 133687317,
     'NEAR': 1188295576,
     'MATIC': 10000000000,
@@ -60,7 +60,8 @@ CurrencyList = {
     'JUP': 10000000000,
     'W': 10000000000,
     'PYTH': 9999988994,
-    'ONE': 14269278702 
+    'ONE': 14269278702,
+    'INJ': 100000000
 }
 
 # git repo data
@@ -73,9 +74,17 @@ GitHubData = {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
     },
+    'INJ': {
+        'owner': 'InjectiveLabs',
+        'repo': 'injective-ts'
+    },
     'PITH': {
         'owner': 'pyth-network',
         'repo': 'pyth-crosschain'
+    },
+    'ROSE': {
+        'owner': 'oasisprotocol',
+        'repo': 'oasis-core'
     },
     'ONE': {
         'owner': 'harmony-one',
@@ -188,10 +197,6 @@ GitHubData = {
     'NANO': {
         'owner': 'nanocurrency',
         'repo': 'nano-node'
-    },
-    'ONT': {
-        'owner': 'ontio',
-        'repo': 'ontology'
     },
     'NEAR': {
         'owner': 'near',
