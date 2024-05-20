@@ -22,6 +22,10 @@ Underestimate = {}
 for curr, emission in tqdm.tqdm(constants.CurrencyList.items()): 
     time.sleep(1)
     curr_data = helper.getData(curr)
+
+    if len(curr_data) == 0:
+        continue
+    
     total_mkt_cap = curr_data['TOTAL_MKT_CAP_USD']
     currency_price = curr_data['PRICE_USD']
     #currency_price = random.randint(1, 100)
