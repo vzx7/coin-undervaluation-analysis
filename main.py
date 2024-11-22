@@ -4,11 +4,14 @@ import tqdm
 import tabulate
 import helper
 import constants
+import datetime
 from babel.numbers import format_currency, format_decimal
 
 
-
 print('\n### ' + constants.APP_TITLE.title() + ' ###\n')
+
+date = datetime.datetime.today()
+print('Date: ',  date.strftime("%m/%d/%Y, %H:%M:%S"))
 
 #BTC_price = 63000
 BTC_DATA = helper.getData(constants.BTC_ID)

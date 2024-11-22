@@ -62,7 +62,10 @@ CurrencyList = {
     'PYTH': 9999988994,
     'ONE': 14269278702,
     'INJ': 100000000,
-    'NOT': 102719221714
+    'NOT': 102719221714,
+    'ARB': 10000000000,
+    'CFX': 506595716405,
+    'WLD': 10000000000
 }
 
 # git repo data
@@ -74,6 +77,10 @@ GitHubData = {
     'ETH': {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
+    },
+    'WLD': {
+        'owner': 'worldcoin',
+        'repo': 'developer-portal'
     },
     'INJ': {
         'owner': 'InjectiveLabs',
@@ -143,9 +150,17 @@ GitHubData = {
         'owner': 'hashgraph',
         'repo': 'hedera-services'
     },
+    'ARB': {
+        'owner': 'hashgraph',
+        'repo': 'hedera-services'
+    },
     'APT': {
         'owner': 'aptos-labs',
         'repo': 'aptos-core'
+    },
+    'CFX': {
+        'owner': 'Conflux-Chain',
+        'repo': 'conflux-rust'
     },
     'FIL': {
         'owner': 'filecoin-project',

@@ -13,6 +13,11 @@ And run
 ```bash
 $ python ./main.py
 ```
+or (to write to a file)
+```bash
+$ python ./main.py >> stack
+```
+
 Coin statistics will be displayed. Based on these statistics, we can conclude that the price of the coin is objective.
 GIT commits - count of commits in the last year.
 ![scrensort](_scr.png)
