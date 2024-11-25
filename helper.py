@@ -1,6 +1,8 @@
 
 import requests
 import constants
+import calendar
+import datetime
  
 # Get coin price
 def getData(curr):
@@ -23,7 +25,13 @@ def getCountCommits(curr):
         headers = {'Authorization': f'token {constants.GITHUB_TOKEN}'}
         req = requests.get(url, headers=headers, params=params)
         data = req.json()
+        
+        date = datetime.datetime.utcnow()
+        utc_time = calendar.timegm(date.utctimetuple())
+
         for v in data:
-            count_commits += v['total']
+            # number of committees in the last 90 days
+            if v['week'] > utc_time - 7689600 : 
+                count_commits += v['total']
     
     return count_commits

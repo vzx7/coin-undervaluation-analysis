@@ -41,13 +41,15 @@ sorted_underestimate = dict(sorted(Underestimate.items(), reverse=True))
 
 BTC_commits = helper.getCountCommits(constants.BTC_ID)
 
-underestimate_final = [[
-    constants.BTC_ID, format_decimal(constants.BTC_EMISSION, format='#,##0.##;-#', locale='en'), format_currency(BTC_TOTAL_MKT_CUP, 'USD', locale='en_US'), format_currency(BTC_price, 'USD', locale='en_US'), BTC_commits, 0
-]];
+underestimate_final = [];
 
 for v, data in sorted_underestimate.items():
     commits = data[2] if data[2] > 0 else 'no data'
     underestimate_final.append([data[0], format_decimal(data[3], format='#,##0.##;-#', locale='en'), format_currency(data[4], 'USD', locale='en_US'), '$' + str(round(data[1], 4)), commits, round(v)])
+
+underestimate_final.append([
+    constants.BTC_ID, format_decimal(constants.BTC_EMISSION, format='#,##0.##;-#', locale='en'), format_currency(BTC_TOTAL_MKT_CUP, 'USD', locale='en_US'), format_currency(BTC_price, 'USD', locale='en_US'), BTC_commits, 0
+])
 
 print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Mkt. Cap.", "Price (USD)", "GIT commits", "Underestimate"], showindex="always", tablefmt="double_grid"))
 
