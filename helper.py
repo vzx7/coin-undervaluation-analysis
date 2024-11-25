@@ -25,7 +25,7 @@ def getCountCommits(curr):
         headers = {'Authorization': f'token {constants.GITHUB_TOKEN}'}
         req = requests.get(url, headers=headers, params=params)
         data = req.json()
-        
+
         date = datetime.datetime.utcnow()
         utc_time = calendar.timegm(date.utctimetuple())
 

@@ -6,12 +6,15 @@ import helper
 import constants
 import datetime
 from babel.numbers import format_currency, format_decimal
+import json
+import calendar
 
 
 print('\n### ' + constants.APP_TITLE.title() + ' ###\n')
 
 date = datetime.datetime.today()
-print('Date: ',  date.strftime("%m/%d/%Y, %H:%M:%S"))
+date_str = date.strftime("%m/%d/%Y, %H:%M:%S")
+print('Date: ',  date_str)
 
 #BTC_price = 63000
 BTC_DATA = helper.getData(constants.BTC_ID)
@@ -51,5 +54,15 @@ underestimate_final.append([
     constants.BTC_ID, format_decimal(constants.BTC_EMISSION, format='#,##0.##;-#', locale='en'), format_currency(BTC_TOTAL_MKT_CUP, 'USD', locale='en_US'), format_currency(BTC_price, 'USD', locale='en_US'), BTC_commits, 0
 ])
 
-print('\n' + tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Mkt. Cap.", "Price (USD)", "GIT commits of 90 days", "Underestimate"], showindex="always", tablefmt="double_grid"))
+table = tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Mkt. Cap.", "Price (USD)", "GIT commits of 90 days", "Underestimate"], showindex="always", tablefmt="double_grid")
+print('\n' + table)
+
+with open('stack_data/' + date.strftime('report_of_%d-%m-%Y_%H:%M:%S.log'), 'w') as f:
+    f.write(table)
+
+json_file_name = str(calendar.timegm(date.utctimetuple())) + '.json'
+
+with open('stack_json/' + json_file_name, 'w') as f:
+    f.write(json.dumps({ 'data': underestimate_final }))
+
 

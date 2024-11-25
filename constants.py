@@ -65,7 +65,8 @@ CurrencyList = {
     'NOT': 102719221714,
     'ARB': 10000000000,
     'CFX': 506595716405,
-    'WLD': 10000000000
+    'WLD': 10000000000,
+    'SC': 57769785000
 }
 
 # git repo data
@@ -77,6 +78,10 @@ GitHubData = {
     'ETH': {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
+    },
+    'SIA': {
+        'owner': 'SiaFoundation',
+        'repo': 'renterd'
     },
     'WLD': {
         'owner': 'worldcoin',
