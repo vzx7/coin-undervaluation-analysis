@@ -66,7 +66,8 @@ CurrencyList = {
     'ARB': 10000000000,
     'CFX': 506595716405,
     'WLD': 10000000000,
-    'SC': 57769785000
+    'SC': 57769785000,
+    'TAO': 21000000
 }
 
 # git repo data
@@ -78,6 +79,10 @@ GitHubData = {
     'ETH': {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
+    },
+    'SIA': {
+        'owner': 'opentensor',
+        'repo': 'bittensor'
     },
     'SIA': {
         'owner': 'SiaFoundation',
