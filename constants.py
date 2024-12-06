@@ -42,7 +42,6 @@ CurrencyList = {
     'ALGO': 10000000000,
     'FLOW': 1503293597,
     'HNT': 223000000,
-    'OM': 888888888,
     'IOTX': 10000000000,
     'ZEC': 21000000,
     'NANO': 133248297,
@@ -67,7 +66,10 @@ CurrencyList = {
     'CFX': 506595716405,
     'WLD': 10000000000,
     'SC': 57769785000,
-    'TAO': 21000000
+    'TAO': 21000000,
+    'RUNE': 415800965,
+    'KSM': 15810529,
+    'STRK': 10000000000
 }
 
 # git repo data
@@ -80,9 +82,17 @@ GitHubData = {
         'owner': 'ethereum',
         'repo': 'go-ethereum'
     },
-    'SIA': {
+    'TAO': {
         'owner': 'opentensor',
         'repo': 'bittensor'
+    },
+    'KSM': {
+        'owner': 'paritytech',
+        'repo': 'polkadot-sdk'
+    },
+    'STRK': {
+        'owner': 'starkware-libs',
+        'repo': 'cairo'
     },
     'SIA': {
         'owner': 'SiaFoundation',
@@ -150,7 +160,7 @@ GitHubData = {
     },
     'DOT': {
         'owner': 'paritytech',
-        'repo': 'polkadot-sdk'
+        'repo': 'substrate-connect'
     },
     'LINK': {
         'owner': 'smartcontractkit',
