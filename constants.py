@@ -40,7 +40,7 @@ CurrencyList = {
     'GRT': 10797266751,
     'FTM': 3175000000,
     'ALGO': 10000000000,
-    'FLOW': 1503293597,
+    #'FLOW': 1503293597,
     'HNT': 223000000,
     'IOTX': 10000000000,
     'ZEC': 21000000,
@@ -69,7 +69,9 @@ CurrencyList = {
     'TAO': 21000000,
     'RUNE': 415800965,
     'KSM': 15810529,
-    'STRK': 10000000000
+    'STRK': 10000000000,
+    'SEI': 10000000000,
+    'ZK': 3675000000 
 }
 
 # git repo data
@@ -90,6 +92,10 @@ GitHubData = {
         'owner': 'paritytech',
         'repo': 'polkadot-sdk'
     },
+    'SEI': {
+        'owner': 'sei-protocol',
+        'repo': 'sei-chain'
+    },
     'STRK': {
         'owner': 'starkware-libs',
         'repo': 'cairo'
@@ -109,6 +115,10 @@ GitHubData = {
     'PITH': {
         'owner': 'pyth-network',
         'repo': 'pyth-crosschain'
+    },
+    'ZK': {
+        'owner': 'matter-labs',
+        'repo': 'zksync-era'
     },
     'ROSE': {
         'owner': 'oasisprotocol',
@@ -214,10 +224,10 @@ GitHubData = {
         'owner': 'algorand',
         'repo': 'go-algorand'
     },
-    'FLOW': {
+"""     'FLOW': {
         'owner': 'onflow',
         'repo': 'flow-go'
-    },
+    }, """
     'HNT': {
         'owner': 'helium',
         'repo': 'oracles'
