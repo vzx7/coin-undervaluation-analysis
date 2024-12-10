@@ -12,7 +12,7 @@ API_TOKEN = os.getenv("API_TOKEN")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 # BTC emission
-BTC_EMISSION = 21000000
+BTC_EMISSION = 19792881
 
 # BTC symbol
 BTC_ID = 'BTC'
@@ -20,58 +20,62 @@ BTC_ID = 'BTC'
 # Cryptocurrency dictionary, { symbol: emission }
 CurrencyList = {
     'MIOTA': 3229505319,
-    'SOL': 574915273,
-    'XRP': 100000000000,
-    'TONCOIN': 5105886521,
-    'ADA': 45000000000,
-    'AVAX': 715748719,
-    'TRX': 87554275200,
-    'DOT': 1437953431,
-    'BCH': 21000000,
-    'LINK': 1000000000,
-    'UNI': 1000000000,
-    'HBAR': 50000000000,
-    'APT': 1093375145,
-    'FIL': 1960538665,
-    'XLM': 50001806812,
+    'SOL': 476106751,
+    'TONCOIN': 2550783411,
+    'ADA': 35102215549,
+    'AVAX': 447755292,
+    'TRX': 86262438049,
+    'DOT': 1527202210,
+    'LINK': 626849970,
+    'UNI': 600483073,
+    'HBAR': 38228257945,
+    'APT': 536084855,
+    'FIL': 609812460,
+    'XLM': 30161094439,
     'ATOM': 390930671,
-    'VET': 86712634466,
-    'OP': 4294967296,
-    'GRT': 10797266751,
-    'FTM': 3175000000,
-    'ALGO': 10000000000,
-    #'FLOW': 1503293597,
-    'HNT': 223000000,
-    'IOTX': 10000000000,
-    'ZEC': 21000000,
+    'VET': 80985041177,
+    'OP': 125507049,
+    'GRT': 9548531509,
+    'FTM': 2803634835,
+    'ALGO': 8308506364,
+    'FLOW': 1503293597,
+    'HNT': 170472132,
+    'IOTX': 9441369057,
+    'ZEC': 16328268,
     'NANO': 133248297,
-    'ROSE': 10000000000,
+    'ROSE': 7064132681,
     'CTK': 133687317,
     'NEAR': 1188295576,
-    'MATIC': 10000000000,
-    'CRV': 3303030299,
+    'POL': 8352869756,
+    'CRV': 1250228763 ,
     'XMR': 18429993,
-    'CRO': 30263013692,
-    'TIA': 1039890411,
+    'CRO': 26571560696,
+    'TIA': 446686915,
     'STX': 1818000000,
-    'SUI': 10000000000,
+    'SUI': 2927660018,
     'ETH': 122056395,
-    'JUP': 10000000000,
-    'W': 10000000000,
-    'PYTH': 9999988994,
-    'ONE': 14269278702,
-    'INJ': 100000000,
+    'JUP': 1350000000,
+    'W': 2766268902,
+    'PYTH': 3624988786,
+    'INJ': 98848019,
     'NOT': 102719221714,
-    'ARB': 10000000000,
-    'CFX': 506595716405,
-    'WLD': 10000000000,
+    'ARB': 4097359817,
+    'CFX': 4723703483,
+    'WLD': 754009475,
     'SC': 57769785000,
     'TAO': 21000000,
-    'RUNE': 415800965,
+    'RUNE': 340715380,
     'KSM': 15810529,
-    'STRK': 10000000000,
-    'SEI': 10000000000,
-    'ZK': 3675000000 
+    'STRK': 2259283720,
+    'SEI': 3982916666,
+    'ZK': 3675000000,
+    'KAS': 28704026601,
+    'OM': 943444109,
+    'CFG': 507587217,
+    'MPL': 4417985,
+    'AEVO': 900249491,
+    'RSR': 53473336211,
+    'ONDO': 1389759838
 }
 
 # git repo data
@@ -95,6 +99,10 @@ GitHubData = {
     'SEI': {
         'owner': 'sei-protocol',
         'repo': 'sei-chain'
+    },
+    'KAS': {
+        'owner': 'kaspanet',
+        'repo': 'rusty-kaspa'
     },
     'STRK': {
         'owner': 'starkware-libs',
@@ -124,10 +132,6 @@ GitHubData = {
         'owner': 'oasisprotocol',
         'repo': 'oasis-core'
     },
-    'ONE': {
-        'owner': 'harmony-one',
-        'repo': 'harmony'
-    },
     'CRO': {
         'owner': 'crypto-org-chain',
         'repo': 'cronos'
@@ -156,10 +160,6 @@ GitHubData = {
         'owner': 'solana-labs',
         'repo': 'solana'
     },
-    'XRP': {
-        'owner': 'XRPLF',
-        'repo': 'rippled'
-    },
     'AVAX': {
         'owner': 'ava-labs',
         'repo': 'avalanchego'
@@ -177,10 +177,6 @@ GitHubData = {
         'repo': 'chainlink'
     },
     'HBAR': {
-        'owner': 'hashgraph',
-        'repo': 'hedera-services'
-    },
-    'ARB': {
         'owner': 'hashgraph',
         'repo': 'hedera-services'
     },
@@ -224,10 +220,10 @@ GitHubData = {
         'owner': 'algorand',
         'repo': 'go-algorand'
     },
-"""     'FLOW': {
+    'FLOW': {
         'owner': 'onflow',
         'repo': 'flow-go'
-    }, """
+    },
     'HNT': {
         'owner': 'helium',
         'repo': 'oracles'
@@ -263,5 +259,25 @@ GitHubData = {
     'W': {
         'owner': 'wormhole-foundation',
         'repo': 'wormhole'
+    },
+    'CFG': {
+        'owner': 'centrifuge',
+        'repo': 'centrifuge-chain'
+    },
+    'MPL': {
+        'owner': 'maple-labs',
+        'repo': 'maple-js'
+    },
+    'RSR': {
+        'owner': 'reserve-protocol',
+        'repo': 'register'
+    },
+    'OM': {
+        'owner': 'MANTRA-Chain',
+        'repo': 'mantrachain'
+    },
+    'ONDO': {
+        'owner': 'ondoprotocol',
+        'repo': 'peggedassets-server'
     }
 }

@@ -54,7 +54,7 @@ underestimate_final.append([
     constants.BTC_ID, format_decimal(constants.BTC_EMISSION, format='#,##0.##;-#', locale='en'), format_currency(BTC_TOTAL_MKT_CUP, 'USD', locale='en_US'), format_currency(BTC_price, 'USD', locale='en_US'), BTC_commits, 0
 ])
 
-table = tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Emission", "Mkt. Cap.", "Price (USD)", "GIT commits of 90 days", "Underestimate"], showindex="always", tablefmt="double_grid")
+table = tabulate.tabulate(underestimate_final, headers=["Ind", "Simbol", "Circulating supply", "Mkt. Cap.", "Price (USD)", "GIT commits of 90 days", "Underestimate"], showindex="always", tablefmt="double_grid")
 print('\n' + table)
 
 with open('stack_data/' + date.strftime('report_of_%d-%m-%Y_%H:%M:%S.log'), 'w') as f:
